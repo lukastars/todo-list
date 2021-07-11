@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Yusei+Magic&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-dark: #333;
+  --secondary-dark: #444;
+  --primary-light: #eee;
+  --secondary-light: #ddd;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6;
+
+  /* footer support */
+  position: relative; /* makes html an element which footer sticks to */
+  min-height: 100%; /* not necessary when main takes all available space */
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+}
+
+/*HEADER*/
+
+.header {
+  background-color: var(--primary-dark);
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: var(--primary-light);
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Yusei Magic', sans-seri;
+}
+
+/*MAIN*/
+button {
+  display: block;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+}
+input {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+.main {
+  display: flex;
+  min-height: calc(100vh - 10.4rem - 3.5rem);
+  margin-bottom: 3.5rem;
+}
+
+/*NAV*/
+i {
+  margin-right: 1rem;
+}
+nav {
+  background-color: var(--secondary-light);
+  height: auto;
+  flex: 1;
+  max-width: 300px;
+  padding: 2rem;
+}
+.button-open-nav {
+  display: none;
+  background-color: var(--primary-dark);
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.btn-default-project {
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--secondary-light);
+  text-align: left;
+}
+
+.project-title {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.button-project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--secondary-light);
+  text-align: left;
+}
+.button-project:hover {
+  background-color: #c1c1c1;
+}
+.btn-default-project:hover {
+  background-color: #c1c1c1;
+}
+
+.button-add-project {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  margin-left: 0.2rem;
+  background-color: var(--secondary-light);
+  text-align: left;
+}
+.button-add-project.active {
+  display: none;
+}
+.button-add-project:hover {
+  background-color: #c1c1c1;
+}
+
+.add-project-popup {
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+.add-project-popup.active {
+  display: block;
+}
+
+.input-add-project-popup {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.add-project-popup-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-add-project-popup {
+  width: 45%;
+  border: 1px solid #99dd99;
+  background-color: #aaffaa;
+  font-weight: bold;
+}
+.button-add-project-popup:hover {
+  background-color: #33ff33;
+}
+.button-cancel-project-popup {
+  width: 45%;
+  border: 1px solid #eeadad;
+  background-color: #ffbebe;
+  font-weight: bold;
+}
+.button-cancel-project-popup:hover {
+  background-color: #ff3333;
+}
+
+/*project-preview*/
+
+.project-preview {
+  flex: 5;
+  max-width: 900px;
+  padding: 2rem 4rem;
+}
+
+.button-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-light);
+  cursor: default;
+}
+
+.left-task-panel {
+  display: flex;
+  align-items: center;
+}
+.complete {
+  cursor: pointer;
+}
+
+.remove {
+  animation: removed-item-animation 0.5s cubic-bezier(0.55, -0.04, 0.91, 0.94)
+    forwards;
+}
+@keyframes removed-item-animation {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.added {
+  animation: 
+  /*make sure to open space up before bringing the item into position*/ openspace
+      0.3s ease forwards,
+    restored-item-animation 0.3s 0.3s cubic-bezier(0, 0.8, 0.32, 1.07) forwards;
+}
+@keyframes openspace {
+  to {
+    height: auto;
+  }
+}
+
+@keyframes restored-item-animation {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.right-task-panel {
+  display: flex;
+  align-items: center;
+}
+
+.input-task-name {
+  display: block;
+  height: 2.4rem;
+  padding: 0.5rem;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: var(--primary-light);
+  color: inherit;
+  font-family: inherit;
+}
+
+.due-date {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.input-due-date {
+  display: none;
+  height: 2.4rem;
+  padding: 0.5rem;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin: 0 1rem;
+  background-color: var(--primary-light);
+  color: inherit;
+  font-family: inherit;
+}
+
+.due-date.active {
+  display: none;
+}
+.input-due-date.active {
+  display: block;
+}
+
+.button-add-task {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+.button-add-task.active {
+  display: none;
+}
+.button-add-task:hover {
+  background-color: #c1c1c1;
+}
+
+.add-task-popup {
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+.add-task-popup.active {
+  display: block;
+}
+
+.input-add-task-popup {
+  width: 95%;
+  padding: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.add-task-popup-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button-add-task-popup {
+  width: 45%;
+  border: 1px solid #99dd99;
+  background-color: #aaffaa;
+  font-weight: bold;
+}
+
+.button-add-task-popup:hover {
+  background-color: #33ff33;
+}
+.button-cancel-task-popup {
+  width: 45%;
+  border: 1px solid #eeadad;
+  background-color: #ffbebe;
+  font-weight: bold;
+}
+
+.button-cancel-task-popup:hover {
+  background-color: #ff3333;
+}
+
+/*footer*/
+
+.footer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+}
+
+.fa-github {
+  margin-left: 1rem;
+  color: var(--primary-light);
+  font-size: 2rem;
+}
+
+.fa-github:hover {
+  color: #ccc;
+}
+
+@media (max-width: 1200px) {
+  .project-preview {
+    flex: 3;
+  }
+}
+
+@media (max-width: 850px) {
+  .project-preview {
+    flex: 2;
+  }
+}
+
+@media (max-width: 650px) {
+  .button-open-nav {
+    display: block;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .nav {
+    max-width: 100%;
+    display: none;
+  }
+  .nav.active {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.3s linear forwards;
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  .project-preview {
+    flex: 100;
+  }
+
+  .right-task-panel {
+    justify-content: flex-end;
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 57.5%;
+  }
+}

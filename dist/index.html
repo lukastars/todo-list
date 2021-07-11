@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!---HEADER START-->
+    <header class="header">
+      <p class="logo" href="#">
+        <span
+          ><i class="fas fa-check-double" aria-hidden="true"></i>Todo List</span
+        >
+        <button class="button-open-nav" id="button-open-nav">
+          <i class="fas fa-bars"></i>
+        </button>
+      </p>
+    </header>
+    <!---HEADER END-->
+
+    <div class="main">
+      <!---NAV START-->
+      <nav class="nav" id="nav">
+        <button class="btn-default-project inbox">
+          <i class="fas fa-inbox" aria-hidden="true"></i> Inbox
+        </button>
+        <button class="btn-default-project today">
+          <i class="fas fa-calendar-day" aria-hidden="true"></i> Today
+        </button>
+        <h1 class="project-title">Projects</h1>
+        <div id="projects-list"></div>
+      </nav>
+      <!---NAV END-->
+      <!--project-preview START-->
+      <div class="project-preview">
+        <h1 id="project-name">Inbox</h1>
+        <div class="tasks-list" id="tasks-list"></div>
+        <div class="addTaskPlus"></div>
+      </div>
+      <!--project-preview END-->
+    </div>
+
+    <footer class="footer">
+      <p class="copyright"></p>
+      <a
+        href="https://github.com/lukastars"
+        target="_blank"
+        class="github-link"
+      >
+        <i class="github-icon fab fa-github" aria-hidden="true"></i
+      ></a>
+    </footer>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>
