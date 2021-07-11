@@ -5,13 +5,23 @@ let currentProject = 'Inbox';
 if (localStorage.getItem('tasks') === null) {
   tasks = [
     {
-      taskTitle: 'Example Task',
+      taskTitle: 'Example Task for Inbox',
       taskCategory: 'Inbox',
       taskDueDate: '2021/07/12',
     },
     {
-      taskTitle: 'Example Task',
+      taskTitle: 'Example Task for Inbox',
       taskCategory: 'Inbox',
+      taskDueDate: '2021/07/12',
+    },
+    {
+      taskTitle: 'Example Task for Project 1',
+      taskCategory: 'Example Project 1',
+      taskDueDate: '2021/07/12',
+    },
+    {
+      taskTitle: 'Example Task for Project 2',
+      taskCategory: 'Example Project 2',
       taskDueDate: '2021/07/12',
     },
   ];
@@ -21,7 +31,10 @@ if (localStorage.getItem('tasks') === null) {
   tasks = tasksFromStorage;
 }
 if (localStorage.getItem('projects') === null) {
-  projects = [];
+  projects = [
+    { projectTitle: 'Example Project 1' },
+    { projectTitle: 'Example Project 2' },
+  ];
 } else {
   const projectsFromStorage = JSON.parse(localStorage.getItem('projects'));
 
