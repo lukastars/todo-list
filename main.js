@@ -183,8 +183,12 @@ function showTasks() {
     );
   });
   btnAddTaskPopup.addEventListener('click', () => {
-    const task = Task();
-    task.addTask(inputAddTask.value, currentProject);
+    if (inputAddTask.value !== '') {
+      const task = Task();
+      task.addTask(inputAddTask.value, currentProject);
+    } else {
+      alert("Task name can't be empty");
+    }
   });
   btnAddTask.addEventListener('click', (e) => {
     e.target.classList.toggle('active');
@@ -286,8 +290,12 @@ function showProjects() {
   const btnAddProject = document.querySelector('#button-add-project');
 
   btnAddProjectPopup.addEventListener('click', () => {
-    const project = Project();
-    project.addProject(inputAddProject.value);
+    if (inputAddProject.value !== '') {
+      const project = Project();
+      project.addProject(inputAddProject.value);
+    } else {
+      alert("Project name can't be empty");
+    }
   });
 
   btnAddProject.addEventListener('click', (e) => {
