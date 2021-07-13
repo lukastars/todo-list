@@ -111,8 +111,6 @@ const addDueDate = (i, dueDateInputValue) => {
 
       task.taskDueDate = year + '/' + month + '/' + day;
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      console.log(tasks);
-      console.log(projects);
     }
   });
 };
@@ -325,10 +323,11 @@ function showProjects() {
     });
   });
 
-  const projectSelector = document.querySelectorAll('.button-project');
+  const projectSelector = document.querySelectorAll('.left-project-panel');
   projectSelector.forEach((element) => {
     element.addEventListener('click', (e) => {
-      dataIndex = element.getAttribute('data-index');
+      dataIndex =
+        e.target.parentElement.parentElement.getAttribute('data-index');
       currentProject = projects[dataIndex].projectTitle;
 
       const projectName = document.querySelector('#project-name');

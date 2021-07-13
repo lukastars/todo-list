@@ -109,6 +109,7 @@ nav {
   width: 100%;
   background-color: var(--secondary-light);
   text-align: left;
+  cursor: default;
 }
 .button-project:hover {
   background-color: #c1c1c1;
@@ -173,7 +174,9 @@ nav {
 .button-cancel-project-popup:hover {
   background-color: #ff3333;
 }
-
+.left-project-panel {
+  cursor: pointer;
+}
 /*project-preview*/
 
 .project-preview {
