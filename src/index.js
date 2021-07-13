@@ -313,7 +313,6 @@ function showProjects() {
         e.target.parentElement.parentElement.getAttribute('data-index');
       deleteProject(dataIndex);
       e.target.parentElement.parentElement.classList.add('remove');
-
       setTimeout(() => {
         emptyProjects();
         showProjects();

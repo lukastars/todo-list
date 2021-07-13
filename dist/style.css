@@ -177,6 +177,9 @@ nav {
 .left-project-panel {
   cursor: pointer;
 }
+.remove-project {
+  cursor: pointer;
+}
 /*project-preview*/
 
 .project-preview {
