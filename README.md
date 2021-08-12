@@ -1,4 +1,4 @@
-# Project: Todo List [Live Demo](https://lukastars.github.io/todo-list)
+# Project: Todo List 📝 [Live Demo](https://lukastars.github.io/todo-list)
 
 ### Overview
 This is my take on the Todo List App, I tried to make it more advanced and practical with extra functionalities. 
