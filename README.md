@@ -11,7 +11,7 @@ This is my take on the Todo List App, I tried to make it more advanced and pract
 * There is a **project tab for tasks that its due-date is today** 
 
 #### **Technologies Used:**
-* HTML/CSS/JavaScript[ECMAScript]
+* HTML/CSS/JavaScript[ES6+]
 
 #### **Tools:**
 * Visual Studio Code
